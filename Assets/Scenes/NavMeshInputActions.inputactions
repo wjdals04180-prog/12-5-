@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "name": "NavMeshInputActions",
+    "maps": [
+        {
+            "name": "Click",
+            "id": "459da322-f7dd-454e-a428-957a826574a9",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "29655ef5-f02f-404d-9b30-ed5ecaf87007",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8639a1fe-3398-4dd5-be0b-9919c4bd89f2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "NavMesh",
+            "bindingGroup": "NavMesh",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,31 +1,31 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace AshleyR
 {
     public class GearController : MonoBehaviour
     {
-        //Á¦¾îÇÒ ¾Ö´Ï¸ŞÀÌÅÍ ÆÄ¶ó¸ŞÅÍ ÀÌ¸§
+        //ì œì–´í•  ì• ë‹ˆë©”ì´í„° íŒŒë¼ë©”í„° ì´ë¦„
         public string parameterName = "RotateSpeed";
         [Range(0f, 100f)]
-        public float speedValue = 0f; //È¸Àü¼Óµµ
-        public float direction = 1f;    //È¸Àü¹æÇâ
-        public float changeValue = 0.1f; //¼Óµµ º¯È­°ª
+        public float speedValue = 0f; //íšŒì „ì†ë„
+        public float direction = 1f;    //íšŒì „ë°©í–¥
+        public float changeValue = 0.1f; //ì†ë„ ë³€í™”ê°’
 
         private Animator _animator;
 
         void Start()
         {
-            //¾Ö´Ï¸ŞÀÌÅÍ¸¦ Á¦¾îÇÏ±â À§ÇØ¼­ ¹Ì¸® Ä³½Ì(°´Ã¼ÀÇ ÁÖ¼Ò°ªÀ» ±â¾ï½ÃÅ°´Â ÀÏ)ÇÔ.
+            //ì• ë‹ˆë©”ì´í„°ë¥¼ ì œì–´í•˜ê¸° ìœ„í•´ì„œ ë¯¸ë¦¬ ìºì‹±(ê°ì²´ì˜ ì£¼ì†Œê°’ì„ ê¸°ì–µì‹œí‚¤ëŠ” ì¼)í•¨.
             _animator = GetComponent<Animator>();
-            //±â¾î °ÔÀÓ¿ÀºêÁ§Æ® ½ÃÀÛ½Ã È¸Àü ¼Óµµ ÃÊ±âÈ­.
+            //ê¸°ì–´ ê²Œì„ì˜¤ë¸Œì íŠ¸ ì‹œì‘ì‹œ íšŒì „ ì†ë„ ì´ˆê¸°í™”.
             _animator.SetFloat(parameterName, direction * speedValue);
         }
 
         public void OnFaster()
         {
-            //Mathf.Clamp ÇÔ¼ö´Â Ã¹¹øÂ° ÆÄ¶ó¸ŞÅÍÀÇ °ªÀ» µÎ¹øÂ°(ÃÖ¼Ò°ª), ¼¼¹øÂ°(ÃÖ´ë°ª) »çÀÌÀÇ °ªÀ¸·Î °íÁ¤½ÃÅ°´Â ÇÔ¼ö
+            //Mathf.Clamp í•¨ìˆ˜ëŠ” ì²«ë²ˆì§¸ íŒŒë¼ë©”í„°ì˜ ê°’ì„ ë‘ë²ˆì§¸(ìµœì†Œê°’), ì„¸ë²ˆì§¸(ìµœëŒ€ê°’) ì‚¬ì´ì˜ ê°’ìœ¼ë¡œ ê³ ì •ì‹œí‚¤ëŠ” í•¨ìˆ˜
             speedValue = Mathf.Clamp(speedValue + changeValue, 0f, 100f);
-            //¾Ö´Ï¸ŞÀÌÅÍ¿¡°Ô floatÇüÀÇ ÁöÁ¤ÇÑ ÀÌ¸§À» °¡Áø ÆÄ¶ó¹ÌÅÍ¿¡ °ªÀ» ¼öÁ¤ÇÏ´Â ¿äÃ»ÇÒ ¼ö ÀÖ´Ù.
+            //ì• ë‹ˆë©”ì´í„°ì—ê²Œ floatí˜•ì˜ ì§€ì •í•œ ì´ë¦„ì„ ê°€ì§„ íŒŒë¼ë¯¸í„°ì— ê°’ì„ ìˆ˜ì •í•˜ëŠ” ìš”ì²­í•  ìˆ˜ ìˆë‹¤.
             _animator.SetFloat(parameterName, direction * speedValue);
         }
 
@@ -37,7 +37,7 @@ namespace AshleyR
 
         public void OnInvert()
         {
-            //¹æÇâ¿¡´Ù°¡ -1À» °öÇØ¼­ ¹æÇâÀ» ¹İÀü½ÃÅ²´Ù.
+            //ë°©í–¥ì—ë‹¤ê°€ -1ì„ ê³±í•´ì„œ ë°©í–¥ì„ ë°˜ì „ì‹œí‚¨ë‹¤.
             direction *= -1f;
             _animator.SetFloat(parameterName, direction * speedValue);
         }

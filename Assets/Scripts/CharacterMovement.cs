@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
@@ -67,7 +67,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if(!_isMoving)
         {
-            //¿©±â ºÎºĞ ÄÚµå¸¦ ÀÌ·¸°Ô ¼öÁ¤ÇÒ °Í. 
+            //ì—¬ê¸° ë¶€ë¶„ ì½”ë“œë¥¼ ì´ë ‡ê²Œ ìˆ˜ì •í•  ê²ƒ. 
             transform.rotation *= _animator.deltaRotation;
         }
         
